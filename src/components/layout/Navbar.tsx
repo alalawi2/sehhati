@@ -23,7 +23,7 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 glass-strong border-b border-teal-900/5 dark:border-teal-400/10">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Top bar — Open Data Portal branding */}
+        {/* Top bar — Open Data Portal branding — hidden on mobile */}
         <div className="hidden sm:flex items-center justify-center gap-3 py-1.5 border-b border-gray-100 dark:border-slate-800">
           <p className="text-xs text-teal-700 dark:text-teal-300 font-medium tracking-wide">
             مبادرة البوابة الوطنية للبيانات المفتوحة | National Open Data Portal Initiative
@@ -38,15 +38,16 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="flex items-center justify-between h-14">
+        <div className="flex items-center justify-between h-12 sm:h-14">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 shrink-0 group">
-            <div className="p-1.5 rounded-lg bg-gradient-to-br from-teal-600 to-teal-700 group-hover:from-teal-500 group-hover:to-teal-600 transition-all">
-              <Heart className="h-4 w-4 text-white" />
+          <Link href="/" className="flex items-center gap-1.5 sm:gap-2 shrink-0 group">
+            <div className="p-1 sm:p-1.5 rounded-lg bg-gradient-to-br from-teal-600 to-teal-700 group-hover:from-teal-500 group-hover:to-teal-600 transition-all">
+              <Heart className="h-3.5 w-3.5 sm:h-4 sm:w-4 text-white" />
             </div>
-            <span className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">
-              OHealth <span className="text-teal-600 dark:text-teal-400">|</span>{' '}
-              <span className="font-semibold text-xs">منصة عمان للذكاء الصحي</span>
+            <span className="text-sm sm:text-lg font-bold text-gray-900 dark:text-white tracking-tight">
+              OHealth
+              <span className="hidden sm:inline text-teal-600 dark:text-teal-400"> |</span>{' '}
+              <span className="hidden sm:inline font-semibold text-xs">منصة عمان للذكاء الصحي</span>
             </span>
           </Link>
 
@@ -102,7 +103,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className={`block px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  className={`block px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                     active
                       ? 'bg-teal-50 text-teal-800 dark:bg-teal-900/40 dark:text-teal-300'
                       : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50 dark:text-gray-300 dark:hover:text-white dark:hover:bg-slate-800'

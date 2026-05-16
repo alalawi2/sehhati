@@ -69,18 +69,18 @@ export default function DiseasesPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-8">
-        <div className="p-2.5 bg-amber-50 dark:bg-amber-900/30 rounded-xl">
-          <Bug className="h-6 w-6 text-amber-600 dark:text-amber-400" />
+      <div className="flex items-center gap-3 mb-6 sm:mb-8">
+        <div className="p-2 sm:p-2.5 bg-amber-50 dark:bg-amber-900/30 rounded-xl">
+          <Bug className="h-5 w-5 sm:h-6 sm:w-6 text-amber-600 dark:text-amber-400" />
         </div>
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Disease Trends
           </h1>
           <p className="text-xs text-amber-600/70 dark:text-amber-400/70 font-medium">
             اتجاهات الأمراض
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
             Infectious disease surveillance and mortality patterns (2023-2025)
           </p>
         </div>

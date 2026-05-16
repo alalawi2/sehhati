@@ -6,19 +6,19 @@ export default function AboutPage() {
   return (
     <div className="animate-fade-in">
       {/* Hero Header */}
-      <div className="bg-gradient-to-br from-teal-600 to-teal-800 dark:from-teal-900 dark:to-slate-900 py-12">
+      <div className="bg-gradient-to-br from-teal-600 to-teal-800 dark:from-teal-900 dark:to-slate-900 py-8 sm:py-12">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 border border-white/20 mb-4">
             <Database className="h-3 w-3 text-teal-200" />
-            <span className="text-[11px] font-medium text-teal-100">Open Data Lab 2026</span>
+            <span className="text-[10px] sm:text-[11px] font-medium text-teal-100">Open Data Lab 2026</span>
           </div>
-          <h1 className="text-3xl sm:text-4xl font-bold text-white">
+          <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white">
             About OHealth
           </h1>
-          <p className="mt-2 text-xl text-teal-200">
+          <p className="mt-2 text-base sm:text-xl text-teal-200">
             حول OHealth — منصة عمان للذكاء الصحي
           </p>
-          <p className="mt-3 text-sm text-teal-100/80 max-w-2xl mx-auto">
+          <p className="mt-3 text-xs sm:text-sm text-teal-100/80 max-w-2xl mx-auto">
             An open-data health intelligence platform built on Oman&apos;s National Open Data Portal
           </p>
         </div>
@@ -129,6 +129,53 @@ export default function AboutPage() {
               <li>Early detection of disease trends for public health preparedness</li>
               <li>Transparent use of open government data for accountability</li>
             </ul>
+          </div>
+        </section>
+
+        {/* Oman Pride — Health Achievements */}
+        <section className="rounded-xl p-5 sm:p-6 bg-gradient-to-r from-red-50 to-white dark:from-red-900/10 dark:to-slate-900/50 border-2 border-red-100 dark:border-red-900/30">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 bg-red-50 dark:bg-red-900/30 rounded-lg">
+              <Award className="h-5 w-5 text-red-600 dark:text-red-400" />
+            </div>
+            <div>
+              <h2 className="text-lg sm:text-xl font-semibold text-gray-900 dark:text-white">Oman&apos;s Health Achievements</h2>
+              <p className="text-xs text-gray-500 dark:text-gray-400">إنجازات عمان الصحية — رؤية عمان ٢٠٤٠</p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 leading-relaxed">
+            In line with <strong>Oman Vision 2040</strong> (رؤية عمان ٢٠٤٠), the Sultanate has made remarkable strides in healthcare.
+            These achievements, documented through open data, are a testament to the nation&apos;s investment in its people.
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+            <div className="p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700">
+              <p className="text-xl sm:text-2xl font-bold text-teal-700 dark:text-teal-300">75.1 → 78.6</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Life expectancy grew in just 4 years</p>
+              <p className="text-[10px] text-gray-400 dark:text-gray-500">ارتفع متوسط العمر المتوقع خلال ٤ سنوات فقط</p>
+            </div>
+            <div className="p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700">
+              <p className="text-xl sm:text-2xl font-bold text-emerald-700 dark:text-emerald-300">7.4 / 1,000</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Infant mortality — among best in region</p>
+              <p className="text-[10px] text-gray-400 dark:text-gray-500">وفيات الرضع — من أفضل المعدلات في المنطقة</p>
+            </div>
+            <div className="p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700">
+              <p className="text-xl sm:text-2xl font-bold text-blue-700 dark:text-blue-300">99.97%</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Births attended by specialists</p>
+              <p className="text-[10px] text-gray-400 dark:text-gray-500">ولادات بإشراف متخصصين</p>
+            </div>
+            <div className="p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700">
+              <p className="text-xl sm:text-2xl font-bold text-purple-700 dark:text-purple-300">98</p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1">Hospitals serving 5.36M people</p>
+              <p className="text-[10px] text-gray-400 dark:text-gray-500">مستشفى تخدم ٥.٣٦ مليون شخص</p>
+            </div>
+            <div className="p-3 sm:p-4 rounded-lg bg-white dark:bg-slate-800/50 border border-gray-100 dark:border-slate-700 sm:col-span-2 lg:col-span-2">
+              <p className="text-sm text-gray-700 dark:text-gray-200 font-medium leading-relaxed">
+                These achievements, documented through open data, are a testament to the Sultanate&apos;s investment in its people.
+              </p>
+              <p className="text-xs text-gray-500 dark:text-gray-400 mt-1" dir="rtl">
+                هذه الإنجازات، الموثقة عبر البيانات المفتوحة، شاهدة على استثمار السلطنة في شعبها
+              </p>
+            </div>
           </div>
         </section>
 

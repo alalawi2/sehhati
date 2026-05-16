@@ -24,19 +24,19 @@ export default function CapacityPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
-      <div className="flex items-center justify-between mb-8">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 sm:mb-8">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
-            <Building2 className="h-6 w-6 text-blue-600 dark:text-blue-400" />
+          <div className="p-2 sm:p-2.5 bg-blue-50 dark:bg-blue-900/30 rounded-xl">
+            <Building2 className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600 dark:text-blue-400" />
           </div>
           <div>
-            <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+            <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
               Capacity Predictor
             </h1>
             <p className="text-xs text-blue-600/70 dark:text-blue-400/70 font-medium">
               تنبؤ سعة المستشفيات
             </p>
-            <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
               Projected hospital occupancy based on population growth trends
             </p>
           </div>

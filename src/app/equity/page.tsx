@@ -50,18 +50,18 @@ export default function EquityPage() {
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
       {/* Header */}
-      <div className="flex items-center gap-3 mb-8">
-        <div className="p-2.5 bg-purple-50 dark:bg-purple-900/30 rounded-xl">
-          <Shield className="h-6 w-6 text-purple-600 dark:text-purple-400" />
+      <div className="flex items-center gap-3 mb-6 sm:mb-8">
+        <div className="p-2 sm:p-2.5 bg-purple-50 dark:bg-purple-900/30 rounded-xl">
+          <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-purple-600 dark:text-purple-400" />
         </div>
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
+          <h1 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 dark:text-white">
             Equity Atlas
           </h1>
           <p className="text-xs text-purple-600/70 dark:text-purple-400/70 font-medium">
             أطلس العدالة الصحية
           </p>
-          <p className="text-sm text-gray-500 dark:text-gray-400 mt-0.5">
+          <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
             Health resource equity scores across governorates (0-100 scale)
           </p>
         </div>
@@ -80,7 +80,7 @@ export default function EquityPage() {
       </div>
 
       {/* Equity Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-5">
         {scores.map((s, idx) => {
           const govName = getGovernorateName(s.governorateCode);
           return (

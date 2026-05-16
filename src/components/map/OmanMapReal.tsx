@@ -130,7 +130,7 @@ function MapInner({ metric, data, onSelect, selectedCode }: OmanMapRealProps) {
 
   if (!L || !ReactLeaflet || !geoData) {
     return (
-      <div className="w-full h-[500px] flex items-center justify-center bg-gray-50 dark:bg-slate-800/50 rounded-xl">
+      <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-gray-50 dark:bg-slate-800/50 rounded-xl">
         <div className="text-center">
           <div className="animate-spin h-8 w-8 border-4 border-teal-500 border-t-transparent rounded-full mx-auto mb-3" />
           <p className="text-sm text-gray-500 dark:text-gray-400">Loading map...</p>
@@ -175,7 +175,7 @@ function MapInner({ metric, data, onSelect, selectedCode }: OmanMapRealProps) {
     `;
     layer.bindTooltip(tooltipContent, { sticky: true, direction: 'top', className: 'leaflet-tooltip-custom' });
 
-    // Interaction
+    // Interaction — touch-friendly
     layer.on({
       mouseover: (e: any) => {
         const target = e.target;
@@ -197,7 +197,7 @@ function MapInner({ metric, data, onSelect, selectedCode }: OmanMapRealProps) {
 
   return (
     <div className="w-full">
-      <div className="w-full h-[500px] rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700">
+      <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] rounded-xl overflow-hidden border border-gray-200 dark:border-slate-700 touch-manipulation">
         <MapContainer
           ref={mapRef}
           center={[21.5, 56.5]}
@@ -222,7 +222,7 @@ function MapInner({ metric, data, onSelect, selectedCode }: OmanMapRealProps) {
       </div>
 
       {/* Legend */}
-      <div className="mt-4 flex items-center justify-center gap-2 text-xs text-gray-600 dark:text-gray-400">
+      <div className="mt-3 sm:mt-4 flex flex-wrap items-center justify-center gap-2 text-[10px] sm:text-xs text-gray-600 dark:text-gray-400">
         <span>Low</span>
         <div className="flex h-3 rounded overflow-hidden">
           {metric === 'occupancy' ? (
@@ -279,7 +279,7 @@ function MapInner({ metric, data, onSelect, selectedCode }: OmanMapRealProps) {
 const OmanMapReal = dynamic(() => Promise.resolve(MapInner), {
   ssr: false,
   loading: () => (
-    <div className="w-full h-[500px] flex items-center justify-center bg-gray-50 dark:bg-slate-800/50 rounded-xl">
+    <div className="w-full h-[300px] sm:h-[400px] lg:h-[500px] flex items-center justify-center bg-gray-50 dark:bg-slate-800/50 rounded-xl">
       <div className="text-center">
         <div className="animate-spin h-8 w-8 border-4 border-teal-500 border-t-transparent rounded-full mx-auto mb-3" />
         <p className="text-sm text-gray-500 dark:text-gray-400">Loading map...</p>

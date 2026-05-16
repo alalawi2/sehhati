@@ -12,18 +12,18 @@ export default function Footer() {
   return (
     <footer className="border-t border-teal-900/5 dark:border-teal-400/10 bg-gray-50/80 dark:bg-slate-900/80">
       {/* Open Data Portal Highlight Banner */}
-      <div className="bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-emerald-900 py-6">
+      <div className="bg-gradient-to-r from-teal-600 to-emerald-600 dark:from-teal-800 dark:to-emerald-900 py-5 sm:py-6">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="flex items-center justify-center gap-2 mb-2">
-            <Database className="h-5 w-5 text-teal-100" />
-            <h3 className="text-white font-semibold text-sm">
+            <Database className="h-4 w-4 sm:h-5 sm:w-5 text-teal-100" />
+            <h3 className="text-white font-semibold text-xs sm:text-sm">
               Powered by Oman&apos;s Open Government Data
             </h3>
           </div>
-          <p className="text-teal-100 text-xs max-w-2xl mx-auto leading-relaxed">
+          <p className="text-teal-100 text-[10px] sm:text-xs max-w-2xl mx-auto leading-relaxed">
             Built on NCSI open data (OMHLTH2016 &amp; OMPOP2016) from data.gov.om, complemented by the NCSI Statistical Yearbook and Ministry of Health reports.
           </p>
-          <p className="text-teal-200/80 text-xs mt-1 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-teal-200/80 text-[10px] sm:text-xs mt-1 max-w-2xl mx-auto leading-relaxed">
             هذا المشروع يُظهر قوة البيانات الحكومية المفتوحة في سلطنة عمان لدعم قرارات السياسة الصحية المبنية على الأدلة
           </p>
           <a
@@ -37,8 +37,8 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-3">
@@ -106,27 +106,27 @@ export default function Footer() {
               <div className="p-2 rounded-lg border border-teal-200 dark:border-teal-800 bg-teal-50/50 dark:bg-teal-900/20">
                 <p className="text-[9px] text-teal-600 dark:text-teal-400 font-semibold mb-1.5">Competition Organizer | الجهة المنظمة</p>
                 <a href="https://mtcit.gov.om" target="_blank" rel="noopener noreferrer">
-                  <img src="/logos/mtcit-logo.png" alt="Ministry of Transport, Communications and Information Technology" className="h-8 object-contain dark:brightness-200 dark:contrast-50" />
+                  <img src="/logos/mtcit-logo.png" alt="Ministry of Transport, Communications and Information Technology" className="h-7 sm:h-8 object-contain dark:brightness-200 dark:contrast-50" />
                 </a>
               </div>
               {/* Other logos in a row */}
-              <div className="flex items-center gap-3 flex-wrap">
+              <div className="flex items-center gap-2 sm:gap-3 flex-wrap">
                 <a href="https://opendata.gov.om" target="_blank" rel="noopener noreferrer" title="National Open Data Portal">
-                  <img src="/logos/opendata-logo.png" alt="National Open Data Portal" className="h-6 object-contain dark:hidden" />
-                  <img src="/logos/opendata-logo-white.png" alt="National Open Data Portal" className="h-6 object-contain hidden dark:block" />
+                  <img src="/logos/opendata-logo.png" alt="National Open Data Portal" className="h-5 sm:h-6 object-contain dark:hidden" />
+                  <img src="/logos/opendata-logo-white.png" alt="National Open Data Portal" className="h-5 sm:h-6 object-contain hidden dark:block" />
                 </a>
                 <a href="https://www.ncsi.gov.om" target="_blank" rel="noopener noreferrer" title="NCSI">
-                  <img src="/logos/ncsi-logo.png" alt="NCSI" className="h-7 object-contain dark:brightness-200 dark:contrast-50" />
+                  <img src="/logos/ncsi-logo.png" alt="NCSI" className="h-6 sm:h-7 object-contain dark:brightness-200 dark:contrast-50" />
                 </a>
                 <a href="https://www.moh.gov.om" target="_blank" rel="noopener noreferrer" title="Ministry of Health">
-                  <img src="/logos/moh-logo-en.png" alt="Ministry of Health" className="h-6 object-contain dark:brightness-200 dark:contrast-50" />
+                  <img src="/logos/moh-logo-en.png" alt="Ministry of Health" className="h-5 sm:h-6 object-contain dark:brightness-200 dark:contrast-50" />
                 </a>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3">
+        <div className="mt-6 sm:mt-8 pt-4 sm:pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-3">
           <p className="text-[10px] text-gray-400 dark:text-gray-500">
             &copy; 2026 OHealth. All data sourced from publicly available Omani government datasets.
           </p>
