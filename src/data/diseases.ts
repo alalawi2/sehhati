@@ -1,0 +1,52 @@
+import { InfectiousDisease, DiseaseDeathData } from '../lib/types';
+
+export const INFECTIOUS_DISEASES: InfectiousDisease[] = [
+  { name: 'Cholera', nameAr: 'الكوليرا', cases2025: 1, cases2024: 2, cases2023: 0, group: 'A' },
+  { name: 'Meningococcal Infection', nameAr: 'المكورة السحائية', cases2025: 4, cases2024: 6, cases2023: 2, group: 'A' },
+  { name: 'Pneumococcal Invasive Disease', nameAr: 'المكورات الرئوية', cases2025: 30, cases2024: 18, cases2023: 24, group: 'A' },
+  { name: 'Malaria', nameAr: 'الملاريا', cases2025: 263, cases2024: 338, cases2023: 295, group: 'A' },
+  { name: 'Pulmonary Tuberculosis', nameAr: 'السل الرئوي', cases2025: 403, cases2024: 374, cases2023: 457, group: 'A' },
+  { name: 'Extra Pulmonary TB', nameAr: 'السل خارج الرئوي', cases2025: 56, cases2024: 47, cases2023: 33, group: 'A' },
+  { name: 'Dengue', nameAr: 'حمى الضنك', cases2025: 203, cases2024: 1694, cases2023: 2711, group: 'A' },
+  { name: 'COVID-19', nameAr: 'كوفيد-19', cases2025: 817, cases2024: 1613, cases2023: 2394, group: 'A' },
+  { name: 'Food Poisoning', nameAr: 'التسمم الغذائي', cases2025: 707, cases2024: 483, cases2023: 266, group: 'A' },
+  { name: 'Bacterial Meningitis', nameAr: 'التهاب السحايا البكتيري', cases2025: 216, cases2024: 416, cases2023: 230, group: 'B' },
+  { name: 'Viral Hepatitis (Total)', nameAr: 'التهاب الكبد الفيروسي', cases2025: 170, cases2024: 164, cases2023: 76, group: 'B' },
+  { name: 'Hepatitis A', nameAr: 'التهاب الكبد أ', cases2025: 107, cases2024: 111, cases2023: 43, group: 'B' },
+  { name: 'Hepatitis B', nameAr: 'التهاب الكبد ب', cases2025: 7, cases2024: 3, cases2023: 10, group: 'B' },
+  { name: 'Hepatitis C', nameAr: 'التهاب الكبد ج', cases2025: 8, cases2024: 1, cases2023: 3, group: 'B' },
+  { name: 'Hepatitis E', nameAr: 'التهاب الكبد هـ', cases2025: 5, cases2024: 7, cases2023: 8, group: 'B' },
+  { name: 'Typhoid & Paratyphoid', nameAr: 'الحمى التيفودية', cases2025: 23, cases2024: 15, cases2023: 22, group: 'B' },
+  { name: 'Whooping Cough', nameAr: 'السعال الديكي', cases2025: 39, cases2024: 177, cases2023: 142, group: 'B' },
+  { name: 'Brucellosis', nameAr: 'البروسيلا', cases2025: 306, cases2024: 375, cases2023: 245, group: 'B' },
+  { name: 'HIV/AIDS', nameAr: 'فيروس نقص المناعة', cases2025: 221, cases2024: 235, cases2023: 221, group: 'B' },
+  { name: 'Chicken Pox', nameAr: 'الجدري المائي', cases2025: 3325, cases2024: 4429, cases2023: 3750, group: 'C' },
+  { name: 'Mumps', nameAr: 'النكاف', cases2025: 70, cases2024: 64, cases2023: 68, group: 'C' },
+  { name: 'Leprosy', nameAr: 'الجذام', cases2025: 9, cases2024: 1, cases2023: 1, group: 'B' },
+  { name: 'Acute Hemorrhagic Fever', nameAr: 'الحمى النزفية الحادة', cases2025: 207, cases2024: 1702, cases2023: 2715, group: 'A' },
+  { name: 'H. Influenzae type B Meningitis', nameAr: 'التهاب السحايا بالمستدمية النزلية ب', cases2025: 17, cases2024: 17, cases2023: 13, group: 'A' },
+  { name: 'Rabies', nameAr: 'داء الكلب', cases2025: 0, cases2024: 0, cases2023: 1, group: 'A' },
+];
+
+export const DEATHS_BY_DISEASE: DiseaseDeathData[] = [
+  { category: 'Circulatory System', categoryAr: 'أمراض الجهاز الدوري', total: 885, byGovernorate: { MUS: 19, DHO: 109, MSN: 10, BUR: 15, DAK: 116, BTN: 131, BTS: 65, SHS: 50, SHN: 51, DHH: 44, WUS: 0 } },
+  { category: 'Respiratory System', categoryAr: 'أمراض الجهاز التنفسي', total: 666, byGovernorate: { MUS: 42, DHO: 55, MSN: 7, BUR: 10, DAK: 72, BTN: 109, BTS: 84, SHS: 80, SHN: 87, DHH: 21, WUS: 1 } },
+  { category: 'Infectious & Parasitic', categoryAr: 'الأمراض المعدية', total: 667, byGovernorate: { MUS: 19, DHO: 67, MSN: 8, BUR: 6, DAK: 102, BTN: 189, BTS: 51, SHS: 32, SHN: 39, DHH: 64, WUS: 1 } },
+  { category: 'Neoplasms', categoryAr: 'الأورام', total: 303, byGovernorate: { MUS: 4, DHO: 33, MSN: 4, BUR: 5, DAK: 17, BTN: 22, BTS: 7, SHS: 25, SHN: 11, DHH: 6, WUS: 0 } },
+  { category: 'Perinatal Conditions', categoryAr: 'حالات الفترة حول الولادة', total: 215, byGovernorate: { MUS: 1, DHO: 33, MSN: 1, BUR: 4, DAK: 21, BTN: 36, BTS: 15, SHS: 18, SHN: 23, DHH: 12, WUS: 0 } },
+  { category: 'Symptoms & Ill-defined', categoryAr: 'الأعراض غير المحددة', total: 216, byGovernorate: { MUS: 10, DHO: 54, MSN: 4, BUR: 5, DAK: 19, BTN: 33, BTS: 24, SHS: 6, SHN: 24, DHH: 9, WUS: 1 } },
+  { category: 'Genitourinary System', categoryAr: 'الجهاز البولي التناسلي', total: 179, byGovernorate: { MUS: 12, DHO: 31, MSN: 3, BUR: 2, DAK: 18, BTN: 30, BTS: 11, SHS: 16, SHN: 11, DHH: 6, WUS: 0 } },
+  { category: 'Digestive System', categoryAr: 'الجهاز الهضمي', total: 177, byGovernorate: { MUS: 8, DHO: 22, MSN: 1, BUR: 1, DAK: 15, BTN: 23, BTS: 14, SHS: 8, SHN: 9, DHH: 2, WUS: 0 } },
+  { category: 'Congenital Anomalies', categoryAr: 'العيوب الخلقية', total: 150, byGovernorate: { MUS: 0, DHO: 18, MSN: 0, BUR: 2, DAK: 11, BTN: 22, BTS: 9, SHS: 14, SHN: 17, DHH: 11, WUS: 0 } },
+  { category: 'Endocrine & Metabolic', categoryAr: 'أمراض الغدد والتغذية', total: 124, byGovernorate: { MUS: 5, DHO: 18, MSN: 2, BUR: 1, DAK: 9, BTN: 11, BTS: 6, SHS: 5, SHN: 4, DHH: 7, WUS: 1 } },
+  { category: 'Injuries & Poisoning', categoryAr: 'الإصابات والتسمم', total: 123, byGovernorate: { MUS: 0, DHO: 19, MSN: 3, BUR: 1, DAK: 24, BTN: 5, BTS: 23, SHS: 9, SHN: 5, DHH: 1, WUS: 2 } },
+  { category: 'Nervous System', categoryAr: 'الجهاز العصبي', total: 68, byGovernorate: { MUS: 0, DHO: 5, MSN: 0, BUR: 0, DAK: 5, BTN: 14, BTS: 10, SHS: 6, SHN: 7, DHH: 2, WUS: 0 } },
+  { category: 'Blood Diseases', categoryAr: 'أمراض الدم', total: 47, byGovernorate: { MUS: 2, DHO: 4, MSN: 1, BUR: 0, DAK: 9, BTN: 2, BTS: 2, SHS: 1, SHN: 4, DHH: 4, WUS: 0 } },
+  { category: 'Skin Diseases', categoryAr: 'أمراض الجلد', total: 25, byGovernorate: { MUS: 2, DHO: 3, MSN: 0, BUR: 0, DAK: 5, BTN: 4, BTS: 2, SHS: 1, SHN: 0, DHH: 3, WUS: 0 } },
+  { category: 'Musculoskeletal', categoryAr: 'الجهاز العضلي', total: 18, byGovernorate: { MUS: 1, DHO: 1, MSN: 0, BUR: 1, DAK: 1, BTN: 2, BTS: 0, SHS: 0, SHN: 0, DHH: 1, WUS: 0 } },
+  { category: 'Mental & Behavioural', categoryAr: 'الاضطرابات العقلية', total: 7, byGovernorate: { MUS: 1, DHO: 2, MSN: 0, BUR: 1, DAK: 1, BTN: 0, BTS: 0, SHS: 1, SHN: 0, DHH: 1, WUS: 0 } },
+  { category: 'Pregnancy Complications', categoryAr: 'مضاعفات الحمل', total: 4, byGovernorate: { MUS: 1, DHO: 0, MSN: 0, BUR: 0, DAK: 1, BTN: 0, BTS: 0, SHS: 0, SHN: 1, DHH: 1, WUS: 0 } },
+  { category: 'Contact with Health Services', categoryAr: 'مراجعة الخدمات الصحية', total: 118, byGovernorate: { MUS: 1, DHO: 21, MSN: 0, BUR: 2, DAK: 20, BTN: 22, BTS: 15, SHS: 3, SHN: 15, DHH: 5, WUS: 2 } },
+];
+
+export const TOTAL_DEATHS_2025 = 3992;
