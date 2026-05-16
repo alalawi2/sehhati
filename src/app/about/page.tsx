@@ -39,28 +39,30 @@ export default function AboutPage() {
           </div>
           <div className="space-y-3 text-gray-700 dark:text-gray-200 text-sm leading-relaxed">
             <p>
-              Oman&apos;s <strong>National Open Data Portal</strong> (<a href="https://opendata.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline hover:text-teal-900 dark:hover:text-teal-100">opendata.gov.om</a>)
-              is the Sultanate&apos;s official open government data platform. It provides free, publicly accessible datasets
-              across multiple sectors including health, education, economy, and infrastructure. The portal is part of Oman&apos;s
-              commitment to transparency, good governance, and the digital transformation goals of <strong>Vision 2040</strong>.
+              Oman&apos;s open government data ecosystem includes multiple platforms that make official statistics freely
+              available to the public. The <strong>National Open Data Portal</strong> (<a href="https://opendata.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline hover:text-teal-900 dark:hover:text-teal-100">opendata.gov.om</a>)
+              serves as the central hub, while the <strong>NCSI Data Portal</strong> (<a href="https://data.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline hover:text-teal-900 dark:hover:text-teal-100">data.gov.om</a>)
+              publishes detailed statistical datasets covering health, population, economy, and more. Together, these platforms
+              support Oman&apos;s commitment to transparency, good governance, and <strong>Vision 2040</strong>.
             </p>
             <p>
-              <strong>Why it matters:</strong> Open data empowers researchers, entrepreneurs, and policymakers to build
-              evidence-based solutions. By making government data freely available, the portal catalyzes innovation and
-              enables citizens to participate in informed decision-making about their country&apos;s future.
+              <strong>How Sehhati uses open data:</strong> We utilize two primary open datasets from the NCSI Data Portal:
             </p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-sm">
+              <li><strong>OMHLTH2016</strong> — Health dataset: hospitals, beds, workforce, diseases, mortality (<a href="https://data.gov.om/OMHLTH2016/health?regions=1000000-oman" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMHLTH2016</a>)</li>
+              <li><strong>OMPOP2016</strong> — Population dataset: demographics, vital statistics, governorate populations (<a href="https://data.gov.om/OMPOP2016/population" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMPOP2016</a>)</li>
+            </ul>
             <p>
-              <strong>How Sehhati uses it:</strong> This platform is a direct use case of the portal&apos;s data. We consume
-              population statistics, health facility data, disease surveillance records, and demographic indicators
-              published through the portal, then transform them into interactive visualizations and predictive models
-              that support health policy planning across all 11 governorates.
+              These are complemented by the <strong>NCSI Statistical Yearbook 2026</strong> (Issue 54) for detailed hospital-level
+              breakdowns and climate data, and <strong>Ministry of Health Annual Reports</strong> for disease surveillance.
+              All sources are publicly available open government data published by Omani institutions.
             </p>
             <div className="mt-4 p-4 rounded-lg bg-teal-100/60 dark:bg-teal-800/30 border border-teal-200/60 dark:border-teal-700/50">
               <p className="text-xs text-teal-800 dark:text-teal-200 font-medium text-center">
-                Sehhati demonstrates that open data can directly improve health planning and resource allocation in Oman.
+                Sehhati demonstrates the power of Oman&apos;s open government data in enabling evidence-based health planning.
                 <br />
                 <span className="text-teal-600 dark:text-teal-400">
-                  صحتي يُثبت أن البيانات المفتوحة يمكنها تحسين التخطيط الصحي وتوزيع الموارد في سلطنة عمان بشكل مباشر
+                  صحتي يُظهر قوة البيانات الحكومية المفتوحة في سلطنة عمان في تمكين التخطيط الصحي المبني على الأدلة
                 </span>
               </p>
             </div>
@@ -185,30 +187,44 @@ export default function AboutPage() {
               <p className="text-xs text-gray-500 dark:text-gray-400">مصادر البيانات</p>
             </div>
           </div>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 p-3 bg-teal-50 dark:bg-teal-900/20 rounded-lg border border-teal-200 dark:border-teal-800">
+            Sehhati utilizes Oman&apos;s open government data ecosystem — specifically the NCSI Data Portal (<a href="https://data.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om</a>), complemented by the NCSI Statistical Yearbook and Ministry of Health reports. All datasets are publicly available open government data.
+          </p>
           <div className="space-y-3">
             {[
               {
-                name: 'National Open Data Portal (Primary Source)',
-                description: 'Oman\'s official open government data platform. The primary source of all datasets used in this platform, providing population, health, and demographic data through publicly accessible APIs and downloads.',
-                url: 'https://opendata.gov.om',
+                name: 'NCSI Data Portal — Health Dataset (OMHLTH2016)',
+                nameAr: 'بوابة البيانات — مجموعة بيانات الصحة',
+                description: 'Primary dataset: statistical data on health services including hospitals & health units, workforce structure, hospital beds, and diseases & epidemics. Published by the National Centre for Statistics & Information. Coverage: 1975–2023. Available in Excel, CSV, JSON, Python, R, and SDMX formats.',
+                url: 'https://data.gov.om/OMHLTH2016/health?regions=1000000-oman',
                 primary: true,
               },
               {
-                name: 'National Centre for Statistics and Information (NCSI)',
-                description: 'Population statistics, demographic indicators, and vital statistics for all governorates.',
-                url: 'https://data.gov.om',
+                name: 'NCSI Data Portal — Population Dataset (OMPOP2016)',
+                nameAr: 'بوابة البيانات — مجموعة بيانات السكان',
+                description: 'Population by governorate and nationality, vital statistics (births, deaths, fertility rates, life expectancy), demographic projections, and population density.',
+                url: 'https://data.gov.om/OMPOP2016/population',
+                primary: true,
+              },
+              {
+                name: 'NCSI Statistical Yearbook 2026 (Issue 54)',
+                nameAr: 'الكتاب الإحصائي السنوي ٢٠٢٦ — الإصدار ٥٤',
+                description: 'Complementary source providing detailed hospital-level breakdowns (Section 17: Health), climate data by governorate (Section 1: Climate), and population by wilayat (Section 2: Population). Published May 2026.',
+                url: 'https://www.ncsi.gov.om/publications',
                 primary: false,
               },
               {
-                name: 'Ministry of Health (MOH) — Annual Health Report 2025',
-                description: 'Hospital capacity data, health workforce ratios, infectious disease notifications, and mortality statistics.',
-                url: 'https://www.moh.gov.om',
+                name: 'Ministry of Health — Annual Health Reports',
+                nameAr: 'وزارة الصحة — التقارير الصحية السنوية',
+                description: 'Disease surveillance data, health facility directories, maternal & child health indicators, and healthcare workforce distribution.',
+                url: 'https://www.moh.gov.om/en/statistics/annual-health-reports/',
                 primary: false,
               },
               {
-                name: 'Oman Meteorological Service',
-                description: 'Monthly temperature, humidity, and rainfall data by station for climate-health correlation analysis.',
-                url: 'https://met.gov.om',
+                name: 'National Open Data Portal',
+                nameAr: 'البوابة الوطنية للبيانات المفتوحة',
+                description: 'Oman\'s official national open data initiative by MTCIT. The portal serves as the central hub for open government data. NCSI is a registered publisher on this portal.',
+                url: 'https://opendata.gov.om',
                 primary: false,
               },
             ].map((source) => (

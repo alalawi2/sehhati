@@ -17,11 +17,11 @@ export default function Footer() {
           <div className="flex items-center justify-center gap-2 mb-2">
             <Database className="h-5 w-5 text-teal-100" />
             <h3 className="text-white font-semibold text-sm">
-              Powered by Oman&apos;s National Open Data Portal
+              Powered by Oman&apos;s Open Government Data
             </h3>
           </div>
           <p className="text-teal-100 text-xs max-w-2xl mx-auto leading-relaxed">
-            This project demonstrates the power of Oman&apos;s open government data in supporting evidence-based health policy decisions.
+            Built on NCSI open data (OMHLTH2016 &amp; OMPOP2016) from data.gov.om, complemented by the NCSI Statistical Yearbook and Ministry of Health reports.
           </p>
           <p className="text-teal-200/80 text-xs mt-1 max-w-2xl mx-auto leading-relaxed">
             هذا المشروع يُظهر قوة البيانات الحكومية المفتوحة في سلطنة عمان لدعم قرارات السياسة الصحية المبنية على الأدلة

@@ -66,26 +66,34 @@ const features = [
 
 const dataSources = [
   {
-    name: 'National Open Data Portal',
-    nameAr: 'البوابة الوطنية للبيانات المفتوحة',
-    description: 'The primary data source powering this platform. Oman\'s official open government data initiative enabling innovation, transparency, and evidence-based policy.',
-    url: 'https://opendata.gov.om',
+    name: 'NCSI Open Data Portal — Health Dataset (OMHLTH2016)',
+    nameAr: 'بوابة البيانات المفتوحة — مجموعة بيانات الصحة',
+    description: 'Primary dataset: hospitals, health units, workforce structure, hospital beds, diseases & epidemics. Published by the National Centre for Statistics & Information (NCSI). Coverage: 1975–2023.',
+    url: 'https://data.gov.om/OMHLTH2016/health?regions=1000000-oman',
     primary: true,
-    logo: '/logos/opendata-logo.png',
+    logo: '/logos/ncsi-logo.png',
   },
   {
-    name: 'NCSI Statistical Yearbook 2026',
-    nameAr: 'المركز الوطني للإحصاء والمعلومات',
-    description: 'National Centre for Statistics & Information — Population, demographics, and vital statistics for all governorates.',
-    url: 'https://data.gov.om',
+    name: 'NCSI Open Data Portal — Population Dataset (OMPOP2016)',
+    nameAr: 'بوابة البيانات المفتوحة — مجموعة بيانات السكان',
+    description: 'Population by governorate, nationality, vital statistics (births, deaths, fertility, life expectancy), and demographic projections.',
+    url: 'https://data.gov.om/OMPOP2016/population',
+    primary: true,
+    logo: '/logos/ncsi-logo.png',
+  },
+  {
+    name: 'NCSI Statistical Yearbook 2026 (Issue 54)',
+    nameAr: 'الكتاب الإحصائي السنوي ٢٠٢٦ — الإصدار ٥٤',
+    description: 'Complementary source: detailed hospital-level data, climate indicators, infectious disease notifications, and health workforce by specialization. Section 17 (Health) and Section 2 (Population).',
+    url: 'https://www.ncsi.gov.om/publications',
     primary: false,
     logo: '/logos/ncsi-logo.png',
   },
   {
-    name: 'Ministry of Health',
-    nameAr: 'وزارة الصحة',
-    description: 'Hospital capacity data, health workforce ratios, infectious disease notifications, and mortality statistics.',
-    url: 'https://www.moh.gov.om',
+    name: 'Ministry of Health Annual Reports',
+    nameAr: 'التقارير السنوية لوزارة الصحة',
+    description: 'Disease surveillance data, health facility directories, and maternal/child health indicators.',
+    url: 'https://www.moh.gov.om/en/statistics/annual-health-reports/',
     primary: false,
     logo: '/logos/moh-logo-en.png',
   },
@@ -358,8 +366,11 @@ export default function HomePage() {
             <p className="mt-1 text-gray-500 dark:text-gray-400">
               مصادر البيانات
             </p>
-            <p className="mt-2 text-sm text-gray-400 dark:text-gray-500">
-              All data is sourced from official Omani government open data publications
+            <p className="mt-2 text-sm text-gray-400 dark:text-gray-500 max-w-2xl mx-auto">
+              Utilizing Oman&apos;s open government data ecosystem — including the NCSI Data Portal (data.gov.om), complemented by the NCSI Statistical Yearbook and Ministry of Health reports
+            </p>
+            <p className="mt-1 text-xs text-gray-400 dark:text-gray-500 max-w-2xl mx-auto">
+              تستخدم منظومة البيانات الحكومية المفتوحة في سلطنة عمان — بما في ذلك بوابة بيانات المركز الوطني للإحصاء والمعلومات، مع الكتاب الإحصائي السنوي وتقارير وزارة الصحة
             </p>
           </div>
           {/* MTCIT - Competition Organizer - Hero Card */}
