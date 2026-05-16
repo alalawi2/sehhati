@@ -8,10 +8,10 @@ import Footer from "../components/layout/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: "Sehhati | صحتي — Oman Health Intelligence Platform",
+  title: "OHealth — Oman Health Intelligence Platform | منصة عمان للذكاء الصحي",
   description:
-    "Transforming Oman's open health data into actionable insights. Explore hospital capacity, equity scores, disease trends, and population health indicators.",
-  keywords: ["Oman", "health", "open data", "NCSI", "MOH", "dashboard", "capacity", "equity"],
+    "AI-powered health intelligence platform for Oman. Built on open government data (OMHLTH2016, OMPOP2016) from NCSI. Explore hospital capacity, health equity, disease trends, and population indicators across all 11 governorates.",
+  keywords: ["OHealth", "Oman", "health", "open data", "NCSI", "OMHLTH2016", "hospitals", "capacity", "equity"],
 };
 
 export default function RootLayout({

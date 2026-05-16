@@ -13,10 +13,10 @@ export default function AboutPage() {
             <span className="text-[11px] font-medium text-teal-100">Open Data Lab 2026</span>
           </div>
           <h1 className="text-3xl sm:text-4xl font-bold text-white">
-            About Sehhati
+            About OHealth
           </h1>
           <p className="mt-2 text-xl text-teal-200">
-            حول صحتي
+            حول OHealth — منصة عمان للذكاء الصحي
           </p>
           <p className="mt-3 text-sm text-teal-100/80 max-w-2xl mx-auto">
             An open-data health intelligence platform built on Oman&apos;s National Open Data Portal
@@ -46,7 +46,7 @@ export default function AboutPage() {
               support Oman&apos;s commitment to transparency, good governance, and <strong>Vision 2040</strong>.
             </p>
             <p>
-              <strong>How Sehhati uses open data:</strong> We utilize two primary open datasets from the NCSI Data Portal:
+              <strong>How OHealth uses open data:</strong> We utilize two primary open datasets from the NCSI Data Portal:
             </p>
             <ul className="list-disc list-inside space-y-1 ml-2 text-sm">
               <li><strong>OMHLTH2016</strong> — Health dataset: hospitals, beds, workforce, diseases, mortality (<a href="https://data.gov.om/OMHLTH2016/health?regions=1000000-oman" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMHLTH2016</a>)</li>
@@ -59,10 +59,10 @@ export default function AboutPage() {
             </p>
             <div className="mt-4 p-4 rounded-lg bg-teal-100/60 dark:bg-teal-800/30 border border-teal-200/60 dark:border-teal-700/50">
               <p className="text-xs text-teal-800 dark:text-teal-200 font-medium text-center">
-                Sehhati demonstrates the power of Oman&apos;s open government data in enabling evidence-based health planning.
+                OHealth demonstrates the power of Oman&apos;s open government data in enabling evidence-based health planning.
                 <br />
                 <span className="text-teal-600 dark:text-teal-400">
-                  صحتي يُظهر قوة البيانات الحكومية المفتوحة في سلطنة عمان في تمكين التخطيط الصحي المبني على الأدلة
+                  OHealth يُظهر قوة البيانات الحكومية المفتوحة في سلطنة عمان في تمكين التخطيط الصحي المبني على الأدلة
                 </span>
               </p>
             </div>
@@ -93,7 +93,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             <p>
-              <strong>Sehhati</strong> (صحتي, meaning &ldquo;My Health&rdquo; in Arabic) is an open-data health intelligence
+              <strong>OHealth</strong> (Oman Health) is an open-data health intelligence
               platform for the Sultanate of Oman. Built entirely on data from the National Open Data Portal, it transforms
               publicly available government datasets into interactive visualizations and predictive insights that support
               evidence-based health planning.
@@ -119,7 +119,7 @@ export default function AboutPage() {
           </div>
           <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             <p>
-              Sehhati directly aligns with <strong>رؤية عمان 2040</strong> (Oman Vision 2040), specifically the
+              OHealth directly aligns with <strong>رؤية عمان 2040</strong> (Oman Vision 2040), specifically the
               &ldquo;Health&rdquo; priority area which calls for a world-class health system. The platform supports
               data-driven decision making for:
             </p>
@@ -188,7 +188,7 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 p-3 bg-teal-50 dark:bg-teal-900/20 rounded-lg border border-teal-200 dark:border-teal-800">
-            Sehhati utilizes Oman&apos;s open government data ecosystem — specifically the NCSI Data Portal (<a href="https://data.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om</a>), complemented by the NCSI Statistical Yearbook and Ministry of Health reports. All datasets are publicly available open government data.
+            OHealth utilizes Oman&apos;s open government data ecosystem — specifically the NCSI Data Portal (<a href="https://data.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om</a>), complemented by the NCSI Statistical Yearbook and Ministry of Health reports. All datasets are publicly available open government data.
           </p>
           <div className="space-y-3">
             {[

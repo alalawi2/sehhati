@@ -45,8 +45,8 @@ export default function Navbar() {
               <Heart className="h-4 w-4 text-white" />
             </div>
             <span className="text-lg font-bold text-gray-900 dark:text-white tracking-tight">
-              Sehhati <span className="text-teal-600 dark:text-teal-400">|</span>{' '}
-              <span className="font-semibold text-base">صحتي</span>
+              OHealth <span className="text-teal-600 dark:text-teal-400">|</span>{' '}
+              <span className="font-semibold text-xs">منصة عمان للذكاء الصحي</span>
             </span>
           </Link>
 

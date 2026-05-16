@@ -150,7 +150,7 @@ export default function HomePage() {
             </div>
 
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight">
-              صحتي <span className="text-teal-200">|</span> Sehhati
+              OHealth
             </h1>
             <p className="mt-4 text-xl sm:text-2xl text-teal-100 font-light">
               Oman Health Intelligence Platform

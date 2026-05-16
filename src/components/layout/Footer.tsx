@@ -46,7 +46,7 @@ export default function Footer() {
                 <Heart className="h-3.5 w-3.5 text-white" />
               </div>
               <span className="font-bold text-gray-900 dark:text-white">
-                Sehhati | صحتي
+                OHealth
               </span>
             </div>
             <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed">
@@ -128,7 +128,7 @@ export default function Footer() {
 
         <div className="mt-8 pt-6 border-t border-gray-200 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-3">
           <p className="text-[10px] text-gray-400 dark:text-gray-500">
-            &copy; 2026 Sehhati. All data sourced from publicly available Omani government datasets.
+            &copy; 2026 OHealth. All data sourced from publicly available Omani government datasets.
           </p>
           <p className="text-[10px] text-gray-400 dark:text-gray-500">
             مختبر البيانات المفتوحة عمان | Open Data Lab Oman 2026
