@@ -97,9 +97,15 @@ export default function Footer() {
             <h3 className="font-semibold text-gray-900 dark:text-white mb-3 text-xs uppercase tracking-wider">
               Built By
             </h3>
-            <p className="text-xs text-gray-600 dark:text-gray-300 font-medium">
-              MedResearch Academy | أكاديمية البحث الطبي
-            </p>
+            <a href="https://www.medresearch-academy.om" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 group">
+              <img src="/logos/medresearch-logo.png" alt="MedResearch Academy" className="h-8 sm:h-10 object-contain" />
+              <div>
+                <p className="text-xs text-gray-600 dark:text-gray-300 font-medium group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                  MedResearch Academy
+                </p>
+                <p className="text-[9px] text-gray-400 dark:text-gray-500">أكاديمية البحث الطبي</p>
+              </div>
+            </a>
             {/* Official Government Logos */}
             <div className="mt-4 space-y-3">
               {/* MTCIT - Competition Organizer - Most Prominent */}

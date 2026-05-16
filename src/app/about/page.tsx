@@ -343,12 +343,21 @@ export default function AboutPage() {
             </div>
           </div>
           <div className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed">
-            <p className="font-medium text-gray-900 dark:text-white">
-              MedResearch Academy | أكاديمية البحث الطبي
-            </p>
+            <a href="https://www.medresearch-academy.om" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 mb-3 group">
+              <img src="/logos/medresearch-logo.png" alt="MedResearch Academy" className="h-12 sm:h-14 object-contain" />
+              <div>
+                <p className="font-semibold text-gray-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
+                  MedResearch Academy
+                </p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">أكاديمية البحث الطبي</p>
+              </div>
+            </a>
             <p className="mt-1">
               Dedicated to leveraging data science and technology to improve healthcare delivery in Oman and the region.
             </p>
+            <a href="https://www.medresearch-academy.om" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 mt-2 text-xs text-teal-600 dark:text-teal-400 hover:underline">
+              www.medresearch-academy.om
+            </a>
           </div>
         </section>
 
