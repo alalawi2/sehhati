@@ -46,18 +46,21 @@ export default function AboutPage() {
               support Oman&apos;s commitment to transparency, good governance, and <strong>Vision 2040</strong>.
             </p>
             <p>
-              <strong>How OHealth uses open data:</strong> The platform is built primarily on two datasets from the NCSI Data Portal:
+              <strong>How OHealth uses open data:</strong> All data used in OHealth comes from government entities that are
+              registered publishers on the <strong>National Open Data Portal</strong> (<a href="https://opendata.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">opendata.gov.om</a>),
+              published under the <strong>Open Government License — Sultanate of Oman</strong>:
             </p>
-            <ul className="list-disc list-inside space-y-1 ml-2 text-sm">
-              <li><strong>OMHLTH2016</strong> — Health dataset: hospitals, beds, workforce, diseases, mortality (<a href="https://data.gov.om/OMHLTH2016/health?regions=1000000-oman" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMHLTH2016</a>)</li>
-              <li><strong>OMPOP2016</strong> — Population dataset: demographics, vital statistics, governorate populations (<a href="https://data.gov.om/OMPOP2016/population" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMPOP2016</a>)</li>
-            </ul>
-            <p>
-              These primary datasets are complemented by two publicly available NCSI publications for deeper drill-down analysis:
-            </p>
-            <ul className="list-disc list-inside space-y-1 ml-2 text-sm text-gray-500 dark:text-gray-400">
-              <li><strong>NCSI Statistical Yearbook 2026</strong> (Issue 54) — hospital-level utilization details and climate data</li>
-              <li><strong>MOH Annual Health Reports</strong> — disease surveillance context</li>
+            <ul className="list-disc list-inside space-y-2 ml-2 text-sm">
+              <li>
+                <strong>National Center for Statistics and Information (NCSI)</strong> — registered publisher on opendata.gov.om —
+                health dataset OMHLTH2016 (<a href="https://data.gov.om/OMHLTH2016/health?regions=1000000-oman" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMHLTH2016</a>)
+                and population dataset OMPOP2016 (<a href="https://data.gov.om/OMPOP2016/population" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMPOP2016</a>)
+                via the NCSI Data Portal, complemented by the NCSI Statistical Yearbook 2026 (Issue 54) for hospital-level detail
+              </li>
+              <li>
+                <strong>Ministry of Health</strong> — registered publisher on opendata.gov.om —
+                Annual Health Reports for disease surveillance context
+              </li>
             </ul>
             <div className="mt-4 p-4 rounded-lg bg-teal-100/60 dark:bg-teal-800/30 border border-teal-200/60 dark:border-teal-700/50">
               <p className="text-xs text-teal-800 dark:text-teal-200 font-medium text-center">
@@ -96,8 +99,9 @@ export default function AboutPage() {
           <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             <p>
               <strong>OHealth</strong> (Oman Health) is an open-data health intelligence
-              platform for the Sultanate of Oman. Built primarily on NCSI Open Data Portal datasets (OMHLTH2016 &amp; OMPOP2016),
-              complemented by the NCSI Statistical Yearbook for hospital-level detail, it transforms
+              platform for the Sultanate of Oman. Built on open government data published by entities registered on the
+              National Open Data Portal (opendata.gov.om) — primarily NCSI datasets (OMHLTH2016 &amp; OMPOP2016),
+              complemented by the NCSI Statistical Yearbook and MOH reports — it transforms
               publicly available government data into interactive visualizations and predictive insights that support
               evidence-based health planning.
             </p>
@@ -194,7 +198,9 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-            Every feature in OHealth traces back to a specific government data source. The table below maps each platform feature to its primary and complementary sources.
+            Every feature in OHealth traces back to a specific government data source.
+            All sources are published by entities registered on the <strong>National Open Data Portal</strong> (opendata.gov.om)
+            under the <strong>Open Government License — Sultanate of Oman</strong>.
           </p>
           <div className="overflow-x-auto">
             <table className="w-full text-xs sm:text-sm">
@@ -316,43 +322,46 @@ export default function AboutPage() {
             </div>
           </div>
           <p className="text-sm text-gray-600 dark:text-gray-300 mb-4 p-3 bg-teal-50 dark:bg-teal-900/20 rounded-lg border border-teal-200 dark:border-teal-800">
-            OHealth utilizes Oman&apos;s open government data ecosystem — specifically the NCSI Data Portal (<a href="https://data.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om</a>), complemented by the NCSI Statistical Yearbook and Ministry of Health reports. All datasets are publicly available open government data.
+            OHealth uses open government data published by entities registered on the <strong>National Open Data Portal</strong> (<a href="https://opendata.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline font-semibold">opendata.gov.om</a>).
+            Primary data from <strong>NCSI</strong> (registered publisher) via the NCSI Data Portal (<a href="https://data.gov.om" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om</a>),
+            complemented by the NCSI Statistical Yearbook and <strong>Ministry of Health</strong> (registered publisher) reports.
+            All sources are licensed under the <strong>Open Government License — Sultanate of Oman</strong>.
           </p>
           <div className="space-y-3">
             {[
               {
+                name: 'National Open Data Portal (opendata.gov.om)',
+                nameAr: 'البوابة الوطنية للبيانات المفتوحة',
+                description: 'Oman\'s official national open data initiative by MTCIT. 547 datasets from 54 registered publishers. NCSI and Ministry of Health are both registered publishers on this portal. All data used in OHealth comes from these registered publishers.',
+                url: 'https://opendata.gov.om',
+                primary: true,
+              },
+              {
                 name: 'NCSI Data Portal — Health Dataset (OMHLTH2016)',
-                nameAr: 'بوابة البيانات — مجموعة بيانات الصحة',
-                description: 'Primary dataset: statistical data on health services including hospitals & health units, workforce structure, hospital beds, and diseases & epidemics. Published by the National Centre for Statistics & Information. Coverage: 1975–2023. Available in Excel, CSV, JSON, Python, R, and SDMX formats.',
+                nameAr: 'بوابة بيانات NCSI — مجموعة بيانات الصحة',
+                description: 'Published by NCSI (registered publisher on opendata.gov.om). Statistical data on hospitals, health units, workforce, beds, diseases & epidemics. Coverage: 1975–2023.',
                 url: 'https://data.gov.om/OMHLTH2016/health?regions=1000000-oman',
                 primary: true,
               },
               {
                 name: 'NCSI Data Portal — Population Dataset (OMPOP2016)',
-                nameAr: 'بوابة البيانات — مجموعة بيانات السكان',
-                description: 'Population by governorate and nationality, vital statistics (births, deaths, fertility rates, life expectancy), demographic projections, and population density.',
+                nameAr: 'بوابة بيانات NCSI — مجموعة بيانات السكان',
+                description: 'Published by NCSI (registered publisher on opendata.gov.om). Population by governorate, vital statistics, demographic data. Coverage: 1975–2023.',
                 url: 'https://data.gov.om/OMPOP2016/population',
                 primary: true,
               },
               {
                 name: 'NCSI Statistical Yearbook 2026 (Issue 54)',
                 nameAr: 'الكتاب الإحصائي السنوي ٢٠٢٦ — الإصدار ٥٤',
-                description: 'Complementary source providing detailed hospital-level breakdowns (Section 17: Health), climate data by governorate (Section 1: Climate), and population by wilayat (Section 2: Population). Published May 2026.',
+                description: 'Complementary: hospital-level breakdowns (§17: Health), climate data (§1), population by wilayat (§2). Published by NCSI (registered publisher on opendata.gov.om).',
                 url: 'https://www.ncsi.gov.om/publications',
                 primary: false,
               },
               {
                 name: 'Ministry of Health — Annual Health Reports',
                 nameAr: 'وزارة الصحة — التقارير الصحية السنوية',
-                description: 'Disease surveillance data, health facility directories, maternal & child health indicators, and healthcare workforce distribution.',
+                description: 'Complementary: disease surveillance context. Published by MOH (registered publisher on opendata.gov.om, 3 datasets).',
                 url: 'https://www.moh.gov.om/en/statistics/annual-health-reports/',
-                primary: false,
-              },
-              {
-                name: 'National Open Data Portal',
-                nameAr: 'البوابة الوطنية للبيانات المفتوحة',
-                description: 'Oman\'s official national open data initiative by MTCIT. The portal serves as the central hub for open government data. NCSI is a registered publisher on this portal.',
-                url: 'https://opendata.gov.om',
                 primary: false,
               },
             ].map((source) => (
