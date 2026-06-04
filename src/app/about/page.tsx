@@ -46,17 +46,19 @@ export default function AboutPage() {
               support Oman&apos;s commitment to transparency, good governance, and <strong>Vision 2040</strong>.
             </p>
             <p>
-              <strong>How OHealth uses open data:</strong> We utilize two primary open datasets from the NCSI Data Portal:
+              <strong>How OHealth uses open data:</strong> The platform is built primarily on two datasets from the NCSI Data Portal:
             </p>
             <ul className="list-disc list-inside space-y-1 ml-2 text-sm">
               <li><strong>OMHLTH2016</strong> — Health dataset: hospitals, beds, workforce, diseases, mortality (<a href="https://data.gov.om/OMHLTH2016/health?regions=1000000-oman" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMHLTH2016</a>)</li>
               <li><strong>OMPOP2016</strong> — Population dataset: demographics, vital statistics, governorate populations (<a href="https://data.gov.om/OMPOP2016/population" target="_blank" rel="noopener noreferrer" className="text-teal-700 dark:text-teal-300 underline">data.gov.om/OMPOP2016</a>)</li>
             </ul>
             <p>
-              These are complemented by the <strong>NCSI Statistical Yearbook 2026</strong> (Issue 54) for detailed hospital-level
-              breakdowns and climate data, and <strong>Ministry of Health Annual Reports</strong> for disease surveillance.
-              All sources are publicly available open government data published by Omani institutions.
+              These primary datasets are complemented by two publicly available NCSI publications for deeper drill-down analysis:
             </p>
+            <ul className="list-disc list-inside space-y-1 ml-2 text-sm text-gray-500 dark:text-gray-400">
+              <li><strong>NCSI Statistical Yearbook 2026</strong> (Issue 54) — hospital-level utilization details and climate data</li>
+              <li><strong>MOH Annual Health Reports</strong> — disease surveillance context</li>
+            </ul>
             <div className="mt-4 p-4 rounded-lg bg-teal-100/60 dark:bg-teal-800/30 border border-teal-200/60 dark:border-teal-700/50">
               <p className="text-xs text-teal-800 dark:text-teal-200 font-medium text-center">
                 OHealth demonstrates the power of Oman&apos;s open government data in enabling evidence-based health planning.
@@ -94,8 +96,9 @@ export default function AboutPage() {
           <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             <p>
               <strong>OHealth</strong> (Oman Health) is an open-data health intelligence
-              platform for the Sultanate of Oman. Built entirely on data from the National Open Data Portal, it transforms
-              publicly available government datasets into interactive visualizations and predictive insights that support
+              platform for the Sultanate of Oman. Built primarily on NCSI Open Data Portal datasets (OMHLTH2016 &amp; OMPOP2016),
+              complemented by the NCSI Statistical Yearbook for hospital-level detail, it transforms
+              publicly available government data into interactive visualizations and predictive insights that support
               evidence-based health planning.
             </p>
             <p>
@@ -176,6 +179,84 @@ export default function AboutPage() {
                 هذه الإنجازات، الموثقة عبر البيانات المفتوحة، شاهدة على استثمار السلطنة في شعبها
               </p>
             </div>
+          </div>
+        </section>
+
+        {/* Data Provenance — Feature-to-Source Mapping */}
+        <section className="glass rounded-xl p-6">
+          <div className="flex items-center gap-3 mb-4">
+            <div className="p-2 bg-teal-50 dark:bg-teal-900/30 rounded-lg">
+              <Database className="h-5 w-5 text-teal-600 dark:text-teal-400" />
+            </div>
+            <div>
+              <h2 className="text-xl font-semibold text-gray-900 dark:text-white">Data Provenance</h2>
+              <p className="text-xs text-gray-500 dark:text-gray-400">مصادر البيانات لكل ميزة</p>
+            </div>
+          </div>
+          <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+            Every feature in OHealth traces back to a specific government data source. The table below maps each platform feature to its primary and complementary sources.
+          </p>
+          <div className="overflow-x-auto">
+            <table className="w-full text-xs sm:text-sm">
+              <thead>
+                <tr className="border-b-2 border-teal-200 dark:border-teal-800">
+                  <th className="text-left py-2 pr-3 text-gray-700 dark:text-gray-300 font-semibold">Platform Feature</th>
+                  <th className="text-left py-2 pr-3 text-teal-700 dark:text-teal-300 font-semibold">Primary Source</th>
+                  <th className="text-left py-2 text-gray-500 dark:text-gray-400 font-semibold">Complementary</th>
+                </tr>
+              </thead>
+              <tbody className="text-gray-600 dark:text-gray-300">
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Governorate health infrastructure<br /><span className="text-[10px] text-gray-400">(hospitals, beds, health centres, pharmacies)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-200 font-medium">OMHLTH2016</span></td>
+                  <td className="py-2 text-gray-400">—</td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Health workforce trends<br /><span className="text-[10px] text-gray-400">(doctors, nurses, dentists, pharmacists per 10K)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-200 font-medium">OMHLTH2016</span></td>
+                  <td className="py-2 text-gray-400">—</td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Infectious disease cases<br /><span className="text-[10px] text-gray-400">(25 diseases, Groups A/B/C, 2023-2025)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-200 font-medium">OMHLTH2016</span></td>
+                  <td className="py-2"><span className="text-[10px]">Yearbook §17</span></td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Population by governorate<br /><span className="text-[10px] text-gray-400">(Omani/expatriate, density, 2023-2025)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 font-medium">OMPOP2016</span></td>
+                  <td className="py-2 text-gray-400">—</td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Vital statistics trends<br /><span className="text-[10px] text-gray-400">(life expectancy, fertility, infant mortality)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-800 dark:text-blue-200 font-medium">OMPOP2016</span></td>
+                  <td className="py-2 text-gray-400">—</td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Hospital-level utilization<br /><span className="text-[10px] text-gray-400">(43 hospitals: beds, occupancy, discharges, mean stay)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-200 font-medium">OMHLTH2016</span></td>
+                  <td className="py-2"><span className="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 text-[10px] font-medium">Yearbook §17</span></td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Mortality by disease category<br /><span className="text-[10px] text-gray-400">(18 categories, by governorate)</span></td>
+                  <td className="py-2 pr-3"><span className="px-1.5 py-0.5 rounded bg-teal-100 dark:bg-teal-900/40 text-teal-800 dark:text-teal-200 font-medium">OMHLTH2016</span></td>
+                  <td className="py-2"><span className="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 text-[10px] font-medium">Yearbook §17</span></td>
+                </tr>
+                <tr className="border-b border-gray-100 dark:border-slate-700/50">
+                  <td className="py-2 pr-3 font-medium">Climate data<br /><span className="text-[10px] text-gray-400">(temperature, humidity, rainfall by governorate)</span></td>
+                  <td className="py-2 pr-3 text-gray-400">—</td>
+                  <td className="py-2"><span className="px-1.5 py-0.5 rounded bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-200 text-[10px] font-medium">Yearbook §1</span></td>
+                </tr>
+                <tr>
+                  <td className="py-2 pr-3 font-medium">Equity scores, capacity projections, insights</td>
+                  <td className="py-2 pr-3 text-gray-400" colSpan={2}><span className="text-[10px]">Derived — computed from the above sources using documented methodology</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="mt-4 flex flex-wrap gap-3 text-[10px]">
+            <span className="inline-flex items-center gap-1"><span className="w-2 h-2 rounded bg-teal-500" /> OMHLTH2016 (Portal)</span>
+            <span className="inline-flex items-center gap-1"><span className="w-2 h-2 rounded bg-blue-500" /> OMPOP2016 (Portal)</span>
+            <span className="inline-flex items-center gap-1"><span className="w-2 h-2 rounded bg-amber-500" /> NCSI Yearbook (Complementary)</span>
           </div>
         </section>
 

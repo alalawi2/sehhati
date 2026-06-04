@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { GOVERNORATE_HEALTH, MOH_HOSPITALS, HEALTH_INDICATORS } from '../data/hospitals';
+import { GOVERNORATE_HEALTH, HEALTH_INDICATORS } from '../data/hospitals';
 import { POPULATION_BY_GOVERNORATE } from '../data/population';
 import { DEATHS_BY_DISEASE, TOTAL_DEATHS_2025 } from '../data/diseases';
 import { getTotalBeds, getTotalHospitals, getAverageOccupancy, calculateEquityScores } from '../lib/calculations';

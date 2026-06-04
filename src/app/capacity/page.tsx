@@ -6,6 +6,7 @@ import { getGovernorateName } from '../../data/governorates';
 import { Building2, AlertTriangle } from 'lucide-react';
 import CapacitySimulator from '../../components/sections/CapacitySimulator';
 import DownloadButton from '../../components/ui/DownloadButton';
+import SourceBadge from '../../components/ui/SourceBadge';
 
 export default function CapacityPage() {
   const projections = calculateCapacityProjections();
@@ -39,6 +40,7 @@ export default function CapacityPage() {
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
               Projected hospital occupancy based on population growth trends
             </p>
+            <SourceBadge sources={['OMHLTH2016', 'OMPOP2016', 'YEARBOOK']} />
           </div>
         </div>
         <DownloadButton

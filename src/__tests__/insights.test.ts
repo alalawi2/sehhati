@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { generateInsights, Insight } from '../lib/insights';
+import { generateInsights } from '../lib/insights';
 
 describe('generateInsights', () => {
   const insights = generateInsights();

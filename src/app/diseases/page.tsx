@@ -4,6 +4,7 @@ import { INFECTIOUS_DISEASES, DEATHS_BY_DISEASE } from '../../data/diseases';
 import TrendChart from '../../components/charts/TrendChart';
 import BarCompare from '../../components/charts/BarCompare';
 import { Bug, Skull, TrendingUp, TrendingDown } from 'lucide-react';
+import SourceBadge from '../../components/ui/SourceBadge';
 
 export default function DiseasesPage() {
   // Top infectious diseases by 2025 cases
@@ -83,6 +84,7 @@ export default function DiseasesPage() {
           <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
             Infectious disease surveillance and mortality patterns (2023-2025)
           </p>
+          <SourceBadge sources={['OMHLTH2016', 'YEARBOOK']} />
         </div>
       </div>
 

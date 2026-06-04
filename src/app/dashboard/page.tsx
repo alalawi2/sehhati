@@ -8,6 +8,7 @@ import BarCompare from '../../components/charts/BarCompare';
 import GovernorateComparator from '../../components/sections/GovernorateComparator';
 import DownloadButton from '../../components/ui/DownloadButton';
 import { BarChart3 } from 'lucide-react';
+import SourceBadge from '../../components/ui/SourceBadge';
 
 export default function DashboardPage() {
   const healthData = HEALTH_INDICATORS.map(d => ({ ...d }));
@@ -41,6 +42,7 @@ export default function DashboardPage() {
             <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
               National health indicators and workforce trends (2016-2025)
             </p>
+            <SourceBadge sources={['OMHLTH2016', 'OMPOP2016']} />
           </div>
         </div>
         <DownloadButton

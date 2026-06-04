@@ -4,6 +4,7 @@ import { calculateEquityScores } from '../../lib/calculations';
 import { getGovernorateName } from '../../data/governorates';
 import BarCompare from '../../components/charts/BarCompare';
 import { Shield } from 'lucide-react';
+import SourceBadge from '../../components/ui/SourceBadge';
 
 function getScoreColor(score: number): string {
   if (score >= 70) return 'text-emerald-600 dark:text-emerald-400';
@@ -64,6 +65,7 @@ export default function EquityPage() {
           <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-0.5">
             Health resource equity scores across governorates (0-100 scale)
           </p>
+          <SourceBadge sources={['OMHLTH2016', 'OMPOP2016']} />
         </div>
       </div>
 
