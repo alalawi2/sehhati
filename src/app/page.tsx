@@ -23,12 +23,15 @@ import AnimatedCounter from '../components/ui/AnimatedCounter';
 import { GOVERNORATES } from '../data/governorates';
 import { GOVERNORATE_HEALTH, MOH_HOSPITALS } from '../data/hospitals';
 import { POPULATION_BY_GOVERNORATE } from '../data/population';
-import { calculateEquityScores } from '../lib/calculations';
+import { INFECTIOUS_DISEASES } from '../data/diseases';
+import { calculateEquityScores, getTotalBeds, getTotalHospitals, getAverageOccupancy } from '../lib/calculations';
 
+// Computed from data — single source of truth
+const totalPopulation = POPULATION_BY_GOVERNORATE.reduce((s, p) => s + p.total2025, 0);
 const heroStats = [
-  { label: 'Population', labelAr: 'السكان', value: 5.36, suffix: 'M', decimals: 2 },
-  { label: 'Hospitals', labelAr: 'المستشفيات', value: 98, suffix: '', decimals: 0 },
-  { label: 'Beds', labelAr: 'الأسرة', value: 9706, suffix: '', decimals: 0 },
+  { label: 'Population', labelAr: 'السكان', value: totalPopulation / 1_000_000, suffix: 'M', decimals: 2 },
+  { label: 'Hospitals', labelAr: 'المستشفيات', value: getTotalHospitals(), suffix: '', decimals: 0 },
+  { label: 'Beds', labelAr: 'الأسرة', value: getTotalBeds(), suffix: '', decimals: 0 },
   { label: 'Life Expectancy', labelAr: 'متوسط العمر', value: 78.6, suffix: ' yrs', decimals: 1 },
 ];
 
@@ -102,25 +105,43 @@ const dataSources = [
   },
 ];
 
+// Computed "Open Data Revealed" — no hardcoded numbers
+const bedRatiosByGov = GOVERNORATE_HEALTH.map(gh => {
+  const pop = POPULATION_BY_GOVERNORATE.find(p => p.governorateCode === gh.governorateCode);
+  const ratio = pop ? ((gh.govtBeds + gh.privateBeds) / pop.total2025) * 10000 : 0;
+  const name = GOVERNORATES.find(g => g.code === gh.governorateCode)?.nameEn || gh.governorateCode;
+  return { name, ratio };
+}).sort((a, b) => a.ratio - b.ratio);
+const lowestBedGov = bedRatiosByGov[0];
+
+const highestOccHospital = [...MOH_HOSPITALS].sort((a, b) => b.occupancyRate - a.occupancyRate)[0];
+
+const foodPoisoning = INFECTIOUS_DISEASES.find(d => d.name === 'Food Poisoning');
+const fpChange = foodPoisoning && foodPoisoning.cases2023 > 0
+  ? Math.round(((foodPoisoning.cases2025 - foodPoisoning.cases2023) / foodPoisoning.cases2023) * 100)
+  : 0;
+
+const noPrivateCount = GOVERNORATE_HEALTH.filter(gh => gh.privateBeds === 0).length;
+
 const openDataRevealed = [
   {
-    finding: 'Al Batinah South has the lowest bed-to-population ratio in the country — 4.4 per 10,000',
-    findingAr: 'جنوب الباطنة لديها أدنى نسبة أسرة إلى عدد السكان — ٤.٤ لكل ١٠,٠٠٠',
+    finding: `${lowestBedGov.name} has the lowest bed-to-population ratio in the country — ${lowestBedGov.ratio.toFixed(1)} per 10,000`,
+    findingAr: `${lowestBedGov.name} لديها أدنى نسبة أسرة إلى عدد السكان — ${lowestBedGov.ratio.toFixed(1)} لكل ١٠,٠٠٠`,
     severity: 'critical',
   },
   {
-    finding: 'Ibra Hospital is operating at 95.6% capacity — a finding invisible without transparent data',
-    findingAr: 'مستشفى إبراء يعمل بنسبة ٩٥.٦٪ — اكتشاف مستحيل بدون بيانات شفافة',
+    finding: `${highestOccHospital.name} is operating at ${highestOccHospital.occupancyRate}% capacity — a finding invisible without transparent data`,
+    findingAr: `${highestOccHospital.name} يعمل بنسبة ${highestOccHospital.occupancyRate}٪ — اكتشاف مستحيل بدون بيانات شفافة`,
     severity: 'critical',
   },
   {
-    finding: 'A 166% surge in food poisoning cases — enabling early intervention',
-    findingAr: 'ارتفاع ١٦٦٪ في حالات التسمم الغذائي — مما يتيح التدخل المبكر',
+    finding: `A ${fpChange}% surge in food poisoning cases (2023–2025) — enabling early intervention`,
+    findingAr: `ارتفاع ${fpChange}٪ في حالات التسمم الغذائي (٢٠٢٣–٢٠٢٥) — مما يتيح التدخل المبكر`,
     severity: 'warning',
   },
   {
-    finding: '6 governorates with zero private hospital beds — highlighting investment opportunities',
-    findingAr: '٦ محافظات بدون أسرة مستشفيات خاصة — مما يبرز فرص الاستثمار',
+    finding: `${noPrivateCount} governorates with zero private hospital beds — highlighting investment opportunities`,
+    findingAr: `${noPrivateCount} محافظات بدون أسرة مستشفيات خاصة — مما يبرز فرص الاستثمار`,
     severity: 'info',
   },
 ];
@@ -319,22 +340,22 @@ export default function HomePage() {
                     <p className="text-xs text-gray-400 dark:text-gray-500 mt-1">
                       اختر محافظة لعرض التفاصيل
                     </p>
-                    {/* Quick summary stats */}
+                    {/* Quick summary stats — computed from data */}
                     <div className="mt-4 sm:mt-6 grid grid-cols-2 gap-2 sm:gap-3 text-left">
                       <div className="p-2 sm:p-3 rounded-lg bg-teal-50 dark:bg-teal-900/20">
-                        <p className="text-base sm:text-lg font-bold text-teal-700 dark:text-teal-300">98</p>
+                        <p className="text-base sm:text-lg font-bold text-teal-700 dark:text-teal-300">{getTotalHospitals()}</p>
                         <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Total Hospitals</p>
                       </div>
                       <div className="p-2 sm:p-3 rounded-lg bg-amber-50 dark:bg-amber-900/20">
-                        <p className="text-base sm:text-lg font-bold text-amber-700 dark:text-amber-300">9,706</p>
+                        <p className="text-base sm:text-lg font-bold text-amber-700 dark:text-amber-300">{getTotalBeds().toLocaleString()}</p>
                         <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Total Beds</p>
                       </div>
                       <div className="p-2 sm:p-3 rounded-lg bg-blue-50 dark:bg-blue-900/20">
-                        <p className="text-base sm:text-lg font-bold text-blue-700 dark:text-blue-300">11</p>
+                        <p className="text-base sm:text-lg font-bold text-blue-700 dark:text-blue-300">{GOVERNORATES.length}</p>
                         <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Governorates</p>
                       </div>
                       <div className="p-2 sm:p-3 rounded-lg bg-purple-50 dark:bg-purple-900/20">
-                        <p className="text-base sm:text-lg font-bold text-purple-700 dark:text-purple-300">64.6%</p>
+                        <p className="text-base sm:text-lg font-bold text-purple-700 dark:text-purple-300">{getAverageOccupancy()}%</p>
                         <p className="text-[10px] sm:text-xs text-gray-500 dark:text-gray-400">Avg Occupancy</p>
                       </div>
                     </div>

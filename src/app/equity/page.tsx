@@ -98,8 +98,8 @@ export default function EquityPage() {
               </div>
               <div className="space-y-2.5">
                 <ScoreBar label="Beds" score={s.bedScore} />
-                <ScoreBar label="Doctors" score={s.doctorScore} />
-                <ScoreBar label="Nurses" score={s.nurseScore} />
+                <ScoreBar label="Hospitals" score={s.doctorScore} />
+                <ScoreBar label="Centres" score={s.nurseScore} />
                 <ScoreBar label="Access" score={s.accessScore} />
                 <ScoreBar label="Stress" score={s.stressScore} />
               </div>
@@ -112,12 +112,13 @@ export default function EquityPage() {
       <div className="mt-8 glass rounded-xl p-5">
         <h3 className="font-semibold text-gray-900 dark:text-white mb-2">Methodology</h3>
         <p className="text-sm text-gray-600 dark:text-gray-300">
-          The equity score is a composite of five normalized dimensions: <strong>Bed ratio</strong> (hospital beds per 10,000),{' '}
-          <strong>Hospital density</strong> (government hospitals per 100,000 — used as a proxy for physician access),{' '}
-          <strong>Nurse proxy</strong> (health centres per 100,000), <strong>Access</strong> (pharmacies and medical centres per 10,000),{' '}
-          and <strong>Stress</strong> (inverse of average occupancy rate). Each dimension is min-max normalized to 0-100 across
-          governorates, then averaged for the overall score. Higher scores indicate more equitable resource distribution relative to
-          other governorates.
+          The equity score is a composite of five normalized dimensions: <strong>Beds</strong> (government hospital beds per 10,000),{' '}
+          <strong>Hospitals</strong> (government hospitals per 100,000 — proxy for physician access, since per-governorate doctor counts are unavailable),{' '}
+          <strong>Centres</strong> (health centres per 100,000 — proxy for primary/nursing care density),{' '}
+          <strong>Access</strong> (pharmacies and medical centres per 10,000),{' '}
+          and <strong>Stress</strong> (inverse of bed-weighted average occupancy — larger hospitals carry proportionally more weight).{' '}
+          Each dimension is min-max normalized to 0-100 across governorates, then averaged for the overall score.
+          Higher scores indicate more equitable resource distribution relative to other governorates.
         </p>
       </div>
     </div>

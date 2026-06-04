@@ -15,19 +15,23 @@ import { GOVERNORATE_HEALTH, MOH_HOSPITALS } from '../../data/hospitals';
 import { POPULATION_BY_GOVERNORATE } from '../../data/population';
 import { calculateEquityScores } from '../../lib/calculations';
 
+// Compute equity scores once at module level, not per render
+const ALL_EQUITY_SCORES = calculateEquityScores();
+
 function getGovStats(code: string) {
   const health = GOVERNORATE_HEALTH.find(g => g.governorateCode === code);
   const pop = POPULATION_BY_GOVERNORATE.find(p => p.governorateCode === code);
   const hospitals = MOH_HOSPITALS.filter(h => h.governorateCode === code);
-  const equityScores = calculateEquityScores();
-  const equity = equityScores.find(e => e.governorateCode === code);
+  const equity = ALL_EQUITY_SCORES.find(e => e.governorateCode === code);
 
   if (!health || !pop) return null;
 
   const totalBeds = health.govtBeds + health.privateBeds;
   const bedsPerTenK = (totalBeds / pop.total2025) * 10000;
-  const avgOcc = hospitals.length > 0
-    ? hospitals.reduce((s, h) => s + h.occupancyRate * h.beds, 0) / hospitals.reduce((s, h) => s + h.beds, 0)
+  const govtHospitals = hospitals.filter(h => h.sector === 'government');
+  const govtBedCount = govtHospitals.reduce((s, h) => s + h.beds, 0);
+  const avgOcc = govtBedCount > 0
+    ? govtHospitals.reduce((s, h) => s + h.occupancyRate * h.beds, 0) / govtBedCount
     : 0;
   const growthRate = ((pop.total2025 / pop.total2023) - 1) * 100;
 
@@ -62,8 +66,8 @@ export default function GovernorateComparator() {
 
   const radarData = [
     { dimension: 'Beds', A: statsA.equity?.bedScore || 0, B: statsB.equity?.bedScore || 0 },
-    { dimension: 'Doctors', A: statsA.equity?.doctorScore || 0, B: statsB.equity?.doctorScore || 0 },
-    { dimension: 'Nurses', A: statsA.equity?.nurseScore || 0, B: statsB.equity?.nurseScore || 0 },
+    { dimension: 'Hospitals', A: statsA.equity?.doctorScore || 0, B: statsB.equity?.doctorScore || 0 },
+    { dimension: 'Centres', A: statsA.equity?.nurseScore || 0, B: statsB.equity?.nurseScore || 0 },
     { dimension: 'Access', A: statsA.equity?.accessScore || 0, B: statsB.equity?.accessScore || 0 },
     { dimension: 'Capacity', A: statsA.equity?.stressScore || 0, B: statsB.equity?.stressScore || 0 },
   ];

@@ -28,13 +28,17 @@ export default function CapacitySimulator() {
 
     if (!health || !pop) return [];
 
-    const currentBeds = health.govtBeds + health.privateBeds;
+    // Use government beds only — private bed utilization data is unavailable,
+    // matching the projection model in calculations.ts
+    const currentBeds = health.govtBeds;
     const totalBedsAfter = currentBeds + newBeds;
-    const currentOcc = hospitals.length > 0
-      ? hospitals.reduce((s, h) => s + h.occupancyRate * h.beds, 0) / hospitals.reduce((s, h) => s + h.beds, 0)
+    const govtHospitals = hospitals.filter(h => h.sector === 'government');
+    const govtBedCount = govtHospitals.reduce((s, h) => s + h.beds, 0);
+    const currentOcc = govtBedCount > 0
+      ? govtHospitals.reduce((s, h) => s + h.occupancyRate * h.beds, 0) / govtBedCount
       : 50;
 
-    // Current demand = currentOcc% of currentBeds
+    // Current demand = currentOcc% of currentBeds (government only)
     const currentDemand = (currentOcc / 100) * currentBeds;
 
     const data = [];

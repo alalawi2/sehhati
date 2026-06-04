@@ -169,15 +169,15 @@ export default function DiseasesPage() {
           <ul className="space-y-2 text-sm text-gray-600 dark:text-gray-300">
             <li className="flex items-start gap-2">
               <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-red-500 mt-1.5" />
-              Food poisoning cases surged 166% from 266 (2023) to 707 (2025), suggesting worsening food safety conditions.
+              Food poisoning cases surged 166% from 266 (2023) to 707 (2025). The cause is unclear from case counts alone and warrants further investigation.
             </li>
             <li className="flex items-start gap-2">
               <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5" />
-              Dengue cases dropped dramatically from 2,711 (2023) to 203 (2025), likely reflecting effective vector control measures.
+              Dengue cases dropped dramatically from 2,711 (2023) to 203 (2025). Whether this reflects vector control, natural cycle, or reporting changes requires further analysis.
             </li>
             <li className="flex items-start gap-2">
               <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-500 mt-1.5" />
-              COVID-19 cases declined 66% year-over-year, continuing the post-pandemic downtrend.
+              COVID-19 cases declined 66% over 2 years (2023–2025), continuing the post-pandemic downtrend.
             </li>
             <li className="flex items-start gap-2">
               <span className="shrink-0 w-1.5 h-1.5 rounded-full bg-amber-500 mt-1.5" />

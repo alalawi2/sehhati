@@ -1,6 +1,6 @@
 import { GOVERNORATE_HEALTH, MOH_HOSPITALS, HEALTH_INDICATORS } from '../data/hospitals';
 import { POPULATION_BY_GOVERNORATE } from '../data/population';
-import { INFECTIOUS_DISEASES, DEATHS_BY_DISEASE } from '../data/diseases';
+import { INFECTIOUS_DISEASES, DEATHS_BY_DISEASE, TOTAL_DEATHS_2025 } from '../data/diseases';
 import { GOVERNORATES } from '../data/governorates';
 import { calculateEquityScores } from './calculations';
 
@@ -10,6 +10,9 @@ export interface Insight {
   severity: 'critical' | 'warning' | 'info' | 'positive';
   category: 'infrastructure' | 'disease' | 'workforce' | 'population';
   dataPoints: string[];
+  source?: string;       // e.g. "OMHLTH2016", "OMPOP2016", "MOH Annual Report"
+  yearRange?: string;    // e.g. "2023-2025"
+  assumption?: string;   // any key assumption the insight relies on
 }
 
 function getGovName(code: string): string {
@@ -30,6 +33,8 @@ export function generateInsights(): Insight[] {
       severity: 'critical',
       category: 'infrastructure',
       dataPoints: [`Occupancy: ${highest.occupancyRate}%`, `Beds: ${highest.beds}`, `Discharges: ${highest.dischargesTotal.toLocaleString()}`],
+      source: 'NCSI Statistical Yearbook 2026 — Hospital Utilization',
+      yearRange: '2025',
     });
   }
 
@@ -62,6 +67,8 @@ export function generateInsights(): Insight[] {
     severity: 'critical',
     category: 'infrastructure',
     dataPoints: [`${lowestBedRatio.ratio.toFixed(1)} beds/10K`, `Population: ${lowestBedRatio.pop.toLocaleString()}`],
+    source: 'OMHLTH2016 + OMPOP2016',
+    yearRange: '2025',
   });
 
   // 4. Private sector desert
@@ -113,6 +120,8 @@ export function generateInsights(): Insight[] {
       severity: 'critical',
       category: 'disease',
       dataPoints: [`2023: ${top.cases2023}`, `2024: ${top.cases2024}`, `2025: ${top.cases2025}`],
+      source: 'OMHLTH2016 — Infectious Disease Notifications',
+      yearRange: '2023-2025',
     });
   }
 
@@ -130,7 +139,7 @@ export function generateInsights(): Insight[] {
     const decrease = Math.round((1 - top.cases2025 / top.cases2023) * 100);
     insights.push({
       title: `${top.name} declining: -${decrease}% since 2023`,
-      description: `${top.name} cases dropped from ${top.cases2023} to ${top.cases2025}, suggesting effective public health measures or natural disease cycle resolution.`,
+      description: `${top.name} cases dropped from ${top.cases2023} (2023) to ${top.cases2025} (2025). The decline may reflect public health measures, natural disease cycles, or reporting changes.`,
       severity: 'positive',
       category: 'disease',
       dataPoints: [`2023: ${top.cases2023}`, `2024: ${top.cases2024}`, `2025: ${top.cases2025}`],
@@ -144,7 +153,7 @@ export function generateInsights(): Insight[] {
     description: `${topDeath.category} diseases account for ${topDeath.total} deaths, making it the single largest mortality category in Oman.`,
     severity: 'warning',
     category: 'disease',
-    dataPoints: [`Total deaths: ${topDeath.total}`, `Share: ${((topDeath.total / 3992) * 100).toFixed(1)}%`],
+    dataPoints: [`Total deaths: ${topDeath.total}`, `Share: ${((topDeath.total / TOTAL_DEATHS_2025) * 100).toFixed(1)}%`],
   });
 
   // 9. Mortality geographic concentration
