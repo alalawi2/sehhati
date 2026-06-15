@@ -105,10 +105,10 @@ export default function AboutPage() {
           <div className="space-y-3 text-gray-600 dark:text-gray-300 text-sm leading-relaxed">
             <p>
               <strong>OHealth</strong> (Oman Health) is an open-data health intelligence
-              platform for the Sultanate of Oman. Built on open government data published by entities registered on the
-              National Open Data Portal (opendata.gov.om) — primarily NCSI datasets (OMHLTH2016 &amp; OMPOP2016),
-              complemented by the NCSI Statistical Yearbook and MOH reports — it transforms
-              publicly available government data into interactive visualizations and predictive insights that support
+              platform for the Sultanate of Oman. Built on open government data published by the
+              Ministry of Health and the National Centre for Statistics and Information (NCSI) —
+              both registered publishers on the National Open Data Portal (opendata.gov.om) — it transforms
+              6 official datasets into interactive visualizations and predictive insights that support
               evidence-based health planning.
             </p>
             <p>
