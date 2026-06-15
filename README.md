@@ -2,7 +2,7 @@
 
 An interactive bilingual (Arabic/English) platform that transforms open health and population data from the [National Open Data Portal](https://opendata.gov.om) into actionable intelligence for healthcare planning, equity assessment, and disease surveillance across all 11 governorates of the Sultanate of Oman.
 
-**Live Demo:** [sehhati.vercel.app](https://sehhati.vercel.app)
+**Live Demo:** [ohealth.medresearch-academy.om](https://ohealth.medresearch-academy.om)
 
 ## Datasets Used from the National Open Data Portal
 
